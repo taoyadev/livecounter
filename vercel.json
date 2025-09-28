@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "SOCIAL_API_BASE_URL": "@social_api_base_url",
+    "SOCIAL_API_KEY": "@social_api_key"
+  }
+}
