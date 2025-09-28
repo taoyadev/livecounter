@@ -260,41 +260,6 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <WebVitals />
-
-        {/* Performance monitoring script placeholder */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Core Web Vitals monitoring
-              if ('performance' in window && 'PerformanceObserver' in window) {
-                // Monitor LCP
-                new PerformanceObserver((entryList) => {
-                  for (const entry of entryList.getEntries()) {
-                    console.log('LCP:', entry.startTime);
-                  }
-                }).observe({entryTypes: ['largest-contentful-paint']});
-
-                // Monitor FID
-                new PerformanceObserver((entryList) => {
-                  for (const entry of entryList.getEntries()) {
-                    console.log('FID:', entry.processingStart - entry.startTime);
-                  }
-                }).observe({entryTypes: ['first-input']});
-
-                // Monitor CLS
-                let clsValue = 0;
-                new PerformanceObserver((entryList) => {
-                  for (const entry of entryList.getEntries()) {
-                    if (!entry.hadRecentInput) {
-                      clsValue += entry.value;
-                      console.log('CLS:', clsValue);
-                    }
-                  }
-                }).observe({entryTypes: ['layout-shift']});
-              }
-            `
-          }}
-        />
       </body>
     </html>
   );
