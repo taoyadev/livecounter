@@ -1,11 +1,207 @@
 // YouTube Hub Page
 // Directory page for YouTube tools
 
+import { Metadata } from 'next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Youtube, Users, Video, Search, ArrowRight, Activity, CheckCircle, XCircle } from 'lucide-react'
 import Link from 'next/link'
+
+// SEO metadata for YouTube analytics page
+export const metadata: Metadata = {
+  title: "YouTube Analytics Tools - Live Subscriber Counter & Video Stats | LiveCounter",
+  description: "Professional YouTube analytics tools. Track subscriber count, video views, channel stats, and engagement metrics in real-time. Free YouTube counter and analytics for content creators.",
+  keywords: [
+    "YouTube analytics",
+    "YouTube subscriber counter",
+    "YouTube video analytics",
+    "live subscriber count",
+    "YouTube channel stats",
+    "video view counter",
+    "YouTube metrics",
+    "channel analytics",
+    "YouTube tracking tools",
+    "video engagement stats",
+    "YouTube live count",
+    "creator analytics"
+  ],
+  openGraph: {
+    title: "YouTube Analytics Tools - Live Subscriber Counter & Video Stats",
+    description: "Track YouTube subscribers, video views, and channel analytics in real-time. Professional YouTube analytics tools for content creators and marketers.",
+    type: "website",
+    locale: "en_US",
+    url: "https://livecounter.com/youtube",
+    images: [
+      {
+        url: "/og-youtube.png",
+        width: 1200,
+        height: 630,
+        alt: "YouTube Analytics Tools - LiveCounter",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YouTube Analytics Tools - Live Subscriber Counter",
+    description: "Professional YouTube analytics: track subscribers, video views, and engagement metrics in real-time. Free tools for creators.",
+    images: ["/twitter-youtube.png"],
+  },
+  alternates: {
+    canonical: "https://livecounter.com/youtube",
+  },
+  other: {
+    "article:author": "LiveCounter Team",
+    "article:publisher": "LiveCounter",
+    "og:image:alt": "YouTube Analytics Tools - Real-time tracking for creators",
+  },
+}
+
+// Structured data for YouTube analytics tools
+const youtubeToolsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "YouTube Analytics Tools",
+  "description": "Comprehensive YouTube analytics and tracking tools for content creators",
+  "url": "https://livecounter.com/youtube",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 5,
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "position": 1,
+        "name": "YouTube Channel Analytics by ID",
+        "description": "Track YouTube channel statistics using channel ID including subscribers and view counts",
+        "applicationCategory": "Analytics",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://livecounter.com/youtube/channel-id"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 2,
+        "name": "YouTube Channel Analytics by Username",
+        "description": "Get YouTube channel statistics using @username format",
+        "applicationCategory": "Analytics",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://livecounter.com/youtube/channel-username"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 3,
+        "name": "YouTube Video Analytics",
+        "description": "Analyze individual YouTube videos for views, likes, and engagement metrics",
+        "applicationCategory": "Analytics",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://livecounter.com/youtube/video"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 4,
+        "name": "YouTube Channel Search",
+        "description": "Search for YouTube channels by keywords and get detailed information",
+        "applicationCategory": "Analytics",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://livecounter.com/youtube/search-channel"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "position": 5,
+        "name": "YouTube Video Search",
+        "description": "Search for YouTube videos by keywords and get comprehensive data",
+        "applicationCategory": "Analytics",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "url": "https://livecounter.com/youtube/search-video"
+      }
+    ]
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://livecounter.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "YouTube Analytics",
+        "item": "https://livecounter.com/youtube"
+      }
+    ]
+  }
+}
+
+// Service structured data for YouTube analytics
+const youtubeServiceStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "YouTube Analytics and Tracking Service",
+  "description": "Professional YouTube analytics tools for tracking subscribers, video views, and channel metrics",
+  "provider": {
+    "@type": "Organization",
+    "name": "LiveCounter"
+  },
+  "serviceType": "YouTube Analytics",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Content Creators, YouTubers, Marketers"
+  },
+  "category": "Social Media Analytics",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "YouTube Analytics Tools",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "YouTube Subscriber Counter",
+          "description": "Real-time YouTube subscriber count tracking"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "YouTube Video Analytics",
+          "description": "Comprehensive video performance metrics"
+        }
+      }
+    ]
+  }
+}
 
 export default function YouTubePage() {
   const tools = [
@@ -274,6 +470,20 @@ export default function YouTubePage() {
           </Button>
         </Link>
       </section>
+
+      {/* Structured Data Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(youtubeToolsStructuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(youtubeServiceStructuredData)
+        }}
+      />
     </div>
   )
 }

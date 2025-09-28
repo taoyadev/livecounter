@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { User, Video, ArrowRight, Activity, CheckCircle, XCircle } from 'lucide-react'
 import Link from 'next/link'
+import { generatePlatformMetadata, generateServiceStructuredData, generateBreadcrumbStructuredData } from '@/lib/seo'
+
+// SEO metadata for TikTok analytics page
+export const metadata = generatePlatformMetadata('tiktok')
 
 // Custom TikTok Icon Component
 function TikTokIcon({ className }: { className?: string }) {
@@ -227,6 +231,38 @@ export default function TikTokPage() {
           </Button>
         </Link>
       </section>
+
+      {/* Structured Data Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateServiceStructuredData({
+            name: 'TikTok Analytics and Tracking Service',
+            description: 'Professional TikTok analytics tools for tracking followers, video views, and engagement metrics',
+            serviceType: 'TikTok Analytics',
+            audience: 'Content Creators, TikTokers, Marketers',
+            offers: [
+              {
+                name: 'TikTok Follower Counter',
+                description: 'Real-time TikTok follower count tracking'
+              },
+              {
+                name: 'TikTok Video Analytics',
+                description: 'Comprehensive video performance metrics'
+              }
+            ]
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbStructuredData([
+            { name: 'Home', url: 'https://livecounter.com' },
+            { name: 'TikTok Analytics', url: 'https://livecounter.com/tiktok' }
+          ]))
+        }}
+      />
     </div>
   )
 }

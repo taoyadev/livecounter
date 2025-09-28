@@ -6,6 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Instagram, User, Image, ArrowRight, Activity, CheckCircle, XCircle } from 'lucide-react'
 import Link from 'next/link'
+import { generatePlatformMetadata, generateServiceStructuredData, generateBreadcrumbStructuredData } from '@/lib/seo'
+
+// SEO metadata for Instagram analytics page
+export const metadata = generatePlatformMetadata('instagram')
 
 export default function InstagramPage() {
   const tools = [
@@ -218,6 +222,38 @@ export default function InstagramPage() {
           </Button>
         </Link>
       </section>
+
+      {/* Structured Data Scripts */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateServiceStructuredData({
+            name: 'Instagram Analytics and Tracking Service',
+            description: 'Professional Instagram analytics tools for tracking followers, post engagement, and profile metrics',
+            serviceType: 'Instagram Analytics',
+            audience: 'Content Creators, Influencers, Marketers',
+            offers: [
+              {
+                name: 'Instagram Follower Counter',
+                description: 'Real-time Instagram follower count tracking'
+              },
+              {
+                name: 'Instagram Post Analytics',
+                description: 'Comprehensive post engagement metrics'
+              }
+            ]
+          }))
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbStructuredData([
+            { name: 'Home', url: 'https://livecounter.com' },
+            { name: 'Instagram Analytics', url: 'https://livecounter.com/instagram' }
+          ]))
+        }}
+      />
     </div>
   )
 }

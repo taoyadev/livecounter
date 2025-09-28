@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Badge } from '@/components/ui/badge'
-import { CounterDisplay, SubscriberCounter, ViewCounter } from '@/components/counter-display'
+import { CounterDisplay, FollowerCounter, ViewCounter } from '@/components/counter-display'
 import { apiClient, useApiCall, formatDate } from '@/lib/api-client'
 import { Youtube, Search, Users, ArrowLeft, ExternalLink, Loader2, Calendar, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
@@ -211,7 +211,7 @@ export default function YouTubeChannelIdPage() {
 
               {/* Analytics Grid */}
               <div className="grid md:grid-cols-3 gap-6">
-                <SubscriberCounter
+                <FollowerCounter
                   count={channel.subscriberCount || 'n/a'}
                   platform="youtube"
                   isLoading={isLoading}

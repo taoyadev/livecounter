@@ -11,7 +11,7 @@ export async function GET(
   { params }: { params: { videoId: string } }
 ) {
   try {
-    const { videoId } = params
+    const { videoId } = await params
 
     if (!videoId) {
       return NextResponse.json(
