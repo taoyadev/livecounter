@@ -28,9 +28,9 @@ const IconMap = {
 }
 
 const PlatformColors = {
-  instagram: 'bg-gradient-to-r from-purple-500 to-pink-500',
-  tiktok: 'bg-gradient-to-r from-black to-red-500',
-  youtube: 'bg-gradient-to-r from-red-500 to-red-600'
+  instagram: 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500',
+  tiktok: 'bg-gradient-to-r from-gray-900 via-black to-red-500',
+  youtube: 'bg-gradient-to-r from-red-500 via-red-600 to-red-700'
 }
 
 export function CounterDisplay({
@@ -66,15 +66,15 @@ export function CounterDisplay({
     : 'w-64'
 
   return (
-    <Card className={`${cardClassName} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
+    <Card className={`${cardClassName} shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 border-0 backdrop-blur-sm`}>
       <CardHeader className="pb-2">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+          <CardTitle className="text-sm font-semibold text-muted-foreground/80 flex items-center gap-2 tracking-wide">
             {IconComponent && <IconComponent className="h-4 w-4" />}
             {title}
           </CardTitle>
           {platform && (
-            <Badge variant="secondary" className={`text-white text-xs ${PlatformColors[platform]}`}>
+            <Badge variant="secondary" className={`text-white text-xs font-bold ${PlatformColors[platform]} shadow-lg`}>
               {platform.charAt(0).toUpperCase() + platform.slice(1)}
             </Badge>
           )}
@@ -84,18 +84,18 @@ export function CounterDisplay({
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             {isLoading ? (
-              <div className="flex items-center gap-2">
-                <Loader2 className="h-4 w-4 animate-spin" />
-                <span className="text-2xl font-bold text-muted-foreground">Loading...</span>
+              <div className="flex items-center gap-3">
+                <Loader2 className="h-5 w-5 animate-spin text-blue-500" />
+                <span className="text-2xl font-bold text-muted-foreground animate-pulse">Loading...</span>
               </div>
             ) : (
-              <div className="text-2xl font-bold">
+              <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                 {formatValue(value)}
               </div>
             )}
           </div>
           {subtitle && (
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground/70 font-medium">
               {subtitle}
             </p>
           )}
