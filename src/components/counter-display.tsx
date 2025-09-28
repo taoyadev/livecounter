@@ -6,7 +6,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { formatCount, getDisplayValue } from '@/lib/api-client'
-import { Loader2, TrendingUp, Users, Eye, Heart, MessageCircle } from 'lucide-react'
+import { Loader as Loader2, TrendingUp, Users, Eye, Heart, MessageCircle } from 'lucide-react'
 
 interface CounterDisplayProps {
   title: string

@@ -6,7 +6,7 @@ import { PlatformCard } from '@/components/platform-card'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { BarChart3, Clock, Zap, Shield, TrendingUp, Globe, ArrowRight, Sparkles, Activity, Youtube, Users, Play } from 'lucide-react'
+import { ChartBar as BarChart3, Clock, Zap, Shield, TrendingUp, Globe, ArrowRight, Sparkles, Activity, Youtube, Users, Play } from 'lucide-react'
 import Link from 'next/link'
 
 // SEO metadata for homepage
